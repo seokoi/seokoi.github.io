@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    border-right: 2px solid #eee;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    /* color: #333; */
+    color: #fff;
+}
+
+.sidebar .nav-link:hover {
+    font-weight: 500;
+    color: #007bff;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+/* main {
+    padding: 0px 15px 0;
+} */

@@ -1,0 +1,106 @@
+<button type="button" class="btn btn-primary btn-sm" (click)="IsAdd=1;IsUpdate=0" data-bs-toggle="modal"
+  data-bs-target="#modalId">
+  Add New
+</button>
+
+<div class="table-responsive-md">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Role</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of userList; track $index) {
+      <tr class="">
+        <td scope="row">{{ $index }}</td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.password }}</td>
+        <td>{{ item.role }}</td>
+        <td>
+          <span class="btn badge rounded-pill text-bg-warning" (click)="Edit($index);IsAdd=0;IsUpdate=2"
+            data-bs-toggle="modal" data-bs-target="#modalId">Edit</span>
+          <span class="btn badge rounded-pill text-bg-danger">Delete</span>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+  aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId">User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formUser">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="">User name</label>
+                <input type="text" [formControl]="formUser.controls.username" name="" id="" class="form-control"
+                  placeholder="" ariadescribedby="helpId" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="">Email</label>
+                <input type="text" [formControl]="formUser.controls.email" name="" id="" class="form-control"
+                  placeholder="" ariadescribedby="helpId" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="">Password</label>
+                <input type="text" [formControl]="formUser.controls.password" name="" id="" class="form-control"
+                  placeholder="" ariadescribedby="helpId" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="">Role</label>
+                <select class="form-control" [formControl]="formUser.controls.role" name="" id="">
+                  <option ngValue="admin" [selected]="true">Admin</option>
+                  <option ngValue="user">User</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        @if (IsAdd==1) {
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="Add()">Save</button>
+        }
+        @if (IsUpdate==2) {
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="Update()">
+          Update
+        </button>
+        }
+        <button type="button" (click)="IsUpdate=0;IsAdd=0" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+  const myModal = new bootstrap.Modal(
+    document.getElementById("modalId"),
+    options
+  );
+</script>

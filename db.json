@@ -1,0 +1,136 @@
+{
+  "product": [
+    {
+      "productName": "Date A Live",
+      "productCode": "MA-01",
+      "releaseDate": "April 6, 2013",
+      "description": "Shido meets Tohka, a spirit who destroyed the Earth 30 years ago",
+      "price": 600,
+      "stock": 20,
+      "starRating": 5,
+      "imageUrl": "https://m.media-amazon.com/images/I/81FoRARB0dL._AC_UF894,1000_QL80_.jpg",
+      "id": "1"
+    },
+    {
+      "productName": "Lock Back",
+      "productCode": "MA-02",
+      "releaseDate": "July 19, 2021",
+      "description": "The series revolves around two high school students and their journey to becoming mangaka, along with the tragedies that happen to them.",
+      "price": 700,
+      "stock": 15,
+      "starRating": 4.5,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1658438544i/58580969.jpg",
+      "id": "2"
+    },
+    {
+      "productName": "Goobye, Eri",
+      "productCode": "AM-03",
+      "releaseDate": "April 11, 2022",
+      "description": "The story follows a young and depressed high school student named Yuta Ito. One day, he receives a smartphone on his birthday and a strange request from his mother. His mother is terminally ill and wishes to have the final days of her life filmed for future generations",
+      "price": 800,
+      "stock": 22,
+      "starRating": 4.8,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/571abd61e3214001fb3b9966/d7268a8a-e529-4280-b8ab-5d2dd3ce9fd9/Goodbye+Eri+English+Cover.jpg",
+      "id": "3"
+    },
+    {
+      "productName": "Chainsaw Man",
+      "productCode": "AM-04",
+      "releaseDate": "December 3, 2018",
+      "description": "Chainsaw Man follows a lone 16-year-old boy named Denji who, after making a contract with a dog-like devil named Pochita, gains the ability to transform parts of his body into chainsaws.",
+      "price": 600,
+      "stock": 25,
+      "starRating": 4,
+      "imageUrl": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/119/MTA-147569897/no-brand_no-brand_full01.jpg",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "productName": "Kaiju NO.8",
+      "productCode": "MA-05",
+      "releaseDate": "July 3, 2020",
+      "price": 750,
+      "stock": 12,
+      "description": "The story follows Kafka Hibino who, after ingesting a parasitic creature, gains the ability to turn into a kaiju and now must navigate using his power while trying to become part of an organization that eliminates kaiju to fulfill a promise he made with a childhood friend.",
+      "starRating": 4.3,
+      "imageUrl": "https://cdn11.bigcommerce.com/s-aweq463/images/stencil/1280x1280/products/39784/104182/9781974725984__55769.1644332638.jpg?c=2"
+    },
+    {
+      "id": "6",
+      "productName": "Gotoubun No Hanayome",
+      "productCode": "MA-06",
+      "releaseDate": "August 9, 2017",
+      "price": 500,
+      "stock": 30,
+      "description": "The series follows the daily life of a high-school student Futaro Uesugi, who is hired as a private tutor for a group of identical quintuplets: Ichika, Nino, Miku, Yotsuba, and Itsuki Nakano.",
+      "starRating": 4.8,
+      "imageUrl": "https://pbs.twimg.com/media/ERJXa77UwAE_ikl?format=jpg&name=medium"
+    },
+    {
+      "id": "7",
+      "productName": "Your Name",
+      "productCode": "MA-07",
+      "releaseDate": "July 3, 2016",
+      "price": 900,
+      "stock": 7,
+      "description": "Your Name is a touching, emotional, dramatic film about two characters, Taki and Mitsuha, who start waking up in each other's bodies every few days. They learn to work together to make both of their lives as normal as possible and eventually, they both try to visit each other.",
+      "starRating": 5,
+      "imageUrl": "https://kenh14cdn.com/2017/ec4-1484340590645.jpg"
+    },
+    {
+      "id": "8",
+      "productName": "Jujutsu Kais",
+      "productCode": "MA-08",
+      "releaseDate": "April 28, 2017",
+      "price": 650,
+      "stock": 25,
+      "description": "Your Name is a touching, emotional, dramatic film about two characters, Taki and Mitsuha, who start waking up in each other's bodies every few days. They learn to work together to make both of their lives as normal as possible and eventually, they both try to visit each other.",
+      "starRating": 5,
+      "imageUrl": "https://gcs.tripi.vn/public-tripi/tripi-feed/img/475619xfa/anh-mo-ta.png"
+    }
+  ],
+  "User": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456789",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "itc",
+      "email": "itc@gmail.com.vn",
+      "password": "123456789",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "users1",
+      "email": "users1@gmail.com",
+      "password": "12341234",
+      "role": "user"
+    },
+    {
+      "id": "",
+      "username": "thien",
+      "email": "thienbnt2205@gmail.com",
+      "password": "123456789",
+      "role": "user"
+    },
+    {
+      "id": "",
+      "username": "Hieu",
+      "email": "thnm@gmail.com",
+      "password": "123456789",
+      "role": "user"
+    },
+    {
+      "id": "",
+      "username": "truo",
+      "email": "hgjfh@gmail.com",
+      "password": "123456789",
+      "role": "user"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.navbar-nav .nav-link:hover {
+  background-color: orangered;
+  color: white;
+  border-radius: 5px;
+}
+
+.navbar-nav .active {
+  background-color:orangered;
+  color: white;
+  border-radius: 5px;
+}
+.navbar-nav .nav-item {
+  padding: 8px;
+}

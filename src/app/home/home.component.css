@@ -1,0 +1,136 @@
+.input[type="text"] {
+  width: 300px;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+
+.input[type="text"]:focus {
+  width: 100%;
+}
+
+.t:hover {
+  box-shadow: 0 0 5px darkmagenta, 0 0 10px darkmagenta,
+    0 0 15px darkmagenta, 0 0 20px darkmagenta, 0 0 25px darkmagenta,
+    0 0 30px darkmagenta;
+}
+.card-img-top:hover{
+  transform: translate(0, -8px);
+}
+.card-img-top{
+  transition: all 0.5s;
+}
+
+/* From Uiverse.io by TISEPSE */
+.btn2 {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.btn2::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - -2px);
+  background-color: #212121;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn2::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: #212121;
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+}
+
+.btn2:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+
+.btn2:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+
+.btn2:hover {
+  border: 2px solid #fefefe;
+}
+
+.btn2 span {
+  position: relative;
+  z-index: 3;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+.about .main-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+}
+
+.about .main-row .video-container {
+  flex: 1 1 40rem;
+  position: relative;
+}
+
+.about .main-row .video-container video {
+  width: 100%;
+  border: 1.5rem solid steelblue;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0.1);
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .main-row .video-container h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background-color: cadetblue ;
+  color: #333;
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: center;
+  mix-blend-mode: screen;
+}
+
+.about .main-row .content {
+  flex: 1 1 40rem;
+}
+
+.about .main-row .content h3 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.about .main-row .content p {
+  font-size: 1.5rem;
+  color: #999;
+  padding: 0.5rem 0;
+  padding-top: 1rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,161 @@
+<div class="row  p-5">
+  <div class="col-12 col-sm-4 text-center">
+    <img class="" src="{{productDetail?.imageUrl}}" width="100%" height="600px">
+  </div>
+  <div class="col-12 col-sm-5">
+    <h1>{{productDetail?.productName}}</h1>
+    <div class="crop" [style.width.px]="(productDetail?.starRating!*90)/5">
+      <!-- dùng ng-for hiển thị rating -->
+      <div style="width: 90px;">
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </div>
+    </div>
+    <div class="text-justify">
+      <h4>Code: {{productDetail?.productCode}}</h4>
+    </div>
+    <div class="text-justify">
+      <h5>description: </h5> {{productDetail?.description}}
+    </div>
+    <h3>Price : {{ productDetail?.price| currency:'JPY':'symbol'}} </h3>
+    <h5>Quantity in stock : {{productDetail?.stock}} </h5>
+    <button class="btn btn-primary" [disabled]="!productDetail?.stock" (click)="Add()">Buy</button>
+  </div>
+  <div class="col-12 col-sm-3">
+    <div class="border mt-2 p-2">
+      <a href="#" style="float: left;">
+        <i class="bi bi-cart3" style="font-size: 50px;"></i>
+      </a>
+      <div class="text-center">
+        <p>{{ ItemCount()}}</p>
+        Total :
+        {{ ItemSum() |currency:'JPY':'symbol'}}
+        <br>
+        <button class="btn btn-primary" style="margin-top: 10px;" data-bs-toggle="modal" data-bs-target="#modalId">
+          View Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<div class="container-fluid mt-5"
+  style="background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(hinhanh_labs/hinhanh_labs/imagelab6/footer-bg.jpg); background-size: cover;background-position: 0 -60px;">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-lg-4 g-4">
+      <div class="col text-white">
+        <h5>ABOUT US</h5>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius mollitia perspiciatis eaque
+          numquam dolorum. Adipisci, provident. Commodi, voluptatem magni dignissimos dolorum, dicta nisi
+          expedita, labore obcaecati ipsum porro nihil.</p>
+      </div>
+      <div class="col text-white">
+        <h5>SUBSCRIBE</h5>
+        <hr>
+        <input type="text" class="form-control  text-bg-secondary p-3" placeholder="Email">
+        <button class="btn text-white w-100 py-3 rounded-0" style="background-color: brown;">SUBSCRIBE</button>
+        <div class="mt-3 d-flex justify-content-between">
+          <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-facebook"></i></a>
+          <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-twitter"></i></a>
+          <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i
+              class="fa-brands fa-google-plus-g"></i></a>
+          <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col text-white">
+        <h5>CONTACT INFOMATION</h5>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur, MO, Columbia, 508000</p>
+        <p>+01 2000 800 9999</p>
+      </div>
+      <div class="col text-white">
+        <h5>OPENING HOURS</h5>
+        <hr>
+        <p>Monday: closed</p>
+        <p>Tue-Wed: 9AM-10PM</p>
+        <p>Thu-Fri: 9AM-10PM</p>
+        <p>Sat-Sun: 5PM-10PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+  aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId">
+          Cart
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal -->
+        <table style="width: 100%;" class="text-center table">
+          <thead>
+            <tr>
+              <th>Picture</th>
+              <th>Product name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total amount</th>
+              <th></th>
+            </tr>
+          </thead>
+          <!-- dùng ng-for thể hiện giỏ hàng -->
+          <tbody>
+            @for (item of cartList; track $index) {
+            <tr>
+              <td>
+                <img src="{{item.imageUrl}}" style="height: 150px;width: 100px;">
+              </td>
+              <td class="align-middle">{{item.name}}</td>
+              <td class="align-middle">{{item.price | currency:'JPY':'symbol'}}</td>
+              <td class="align-middle">{{item.quantity}}</td>
+              <td class="align-middle">
+                {{item.price! * item.quantity!| currency:'JPY':'symbol'}}
+              </td>
+              <td class="align-middle">
+                <button class="btn btn-danger" (click)="Remove($index)">
+                  Remove
+                </button>
+              </td>
+            </tr>
+            }
+            <tr>
+              <th colspan="2"></th>
+              <th>Sum price:</th>
+              <th>{{ItemCount()}}</th>
+              <th>{{ ItemSum() | currency:'JPY':'symbol'}}</th>
+              <th>
+
+              </th>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+  const myModal = new bootstrap.Modal(
+    document.getElementById("modalId"),
+    options,
+  );
+</script>

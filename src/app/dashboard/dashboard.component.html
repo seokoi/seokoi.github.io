@@ -1,0 +1,60 @@
+<div class="container-fluid bg-white">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-12 col-sm-6 col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+              [routerLink]="['/dashboard']">
+              <!-- <span data-feather="home"></span> aria-current="page"-->
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+              [routerLink]="['/dashboard/user-list']">
+              <!-- <span data-feather="file"></span> -->
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+              [routerLink]="['/dashboard/list']">
+              <!-- <span data-feather="shopping-cart"></span> -->
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="logout"></span>
+              logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content   px-md-4 -->
+    <main class="col-12 col-sm-6 col-md-9 col-lg-10 ms-sm-auto px-md-4">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+      </div>
+      <!-- Cards Section -->
+      <div class="row">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit consectetur unde consequatur, qui saepe, voluptates id sequi dolorem quidem aspernatur tempore odit cupiditate voluptatem at repellendus veritatis quasi. Ipsum, fuga?
+        Suscipit dolore consequuntur itaque corrupti voluptate minima adipisci commodi vero, molestiae sunt, architecto fuga ratione minus iusto magni inventore nemo veniam nesciunt temporibus mollitia praesentium. Eum sapiente iste labore perspiciatis.
+        Modi reprehenderit hic sequi ratione ducimus voluptate praesentium iusto maiores provident similique nam autem ab odit consequuntur necessitatibus quisquam dignissimos aliquid doloribus cupiditate, repudiandae rem eveniet facilis? Inventore, deleniti excepturi!
+        Deleniti animi nisi molestiae eaque, incidunt, dignissimos repellat est quae accusantium impedit soluta unde, facilis quidem voluptates ea velit nihil nesciunt doloremque quas quam quasi? Veritatis dicta consequatur facere enim!
+        Eveniet, placeat expedita facere officia vel consectetur culpa dicta repudiandae perspiciatis suscipit qui! Modi deleniti ratione, deserunt est quasi quae fugit magnam rerum praesentium accusantium rem exercitationem officia itaque corrupti.
+        Facere, eum suscipit nostrum accusantium debitis iste amet totam assumenda ad ullam in labore officia quidem vel, minima sapiente cumque maxime doloremque! Cupiditate ut dolor sapiente? Labore veritatis beatae magnam.</p>
+      </div>
+
+      <!-- Table Section -->
+
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+</div>

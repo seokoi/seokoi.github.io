@@ -1,0 +1,129 @@
+<app-header></app-header>
+<div class="bg">
+  <div class="container-md mt-3">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="assets/images/carosel1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="assets/images/carosel2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="assets/images/carosel3.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev justify-content-start" type="button"
+        data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon p-4" style="background-color: var(--bgprimary);"
+          aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next justify-content-end" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon p-4" style="background-color: var(--bgprimary);"
+          aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <!-- <label for="">Tìm sản phẩm</label> -->
+            <input type="text" size="50" [(ngModel)]="searching" (ngModelChange)="filterResults()" name="searching"
+              class="input form-control" placeholder="Tìm sản phẩm">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-3 pl-3 pr-3">
+      @for (item of filterProductList; track $index) {
+      <div class=" col-sm-6 col-md-6 col-lg-4">
+        <div class="card-deck mt-3">
+          <div class="t card bg-dark text-white">
+            <img class="card-img-top p-3" src="{{item.imageUrl}}" width="100%" height="550px" alt="">
+            <div class="card-body text-center">
+              <h4 class="card-title">{{item.productName}}</h4>
+              <p class="card-text">{{item.price | currency:'JPY':'symbol'}}</p>
+
+              <button>
+                <a href="#" class="btn2" [routerLink]="['/cart', item.id]" routerLinkActive=""><span class="spn2">
+                    Details</span></a>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <!-- video -->
+  <div class="container text-center mt-5">
+    <section class="about" id="about">
+      <h1 style="font-size: 40px; font-weight: bolder; color: aliceblue;font-family: 'Courier New', Courier, monospace; background-color: brown;"><i>My New Video</i></h1>
+      <div class="main-row ">
+          <div class="video-container ">
+              <video src="assets/images/anna.mp4" loop autoplay muted></video>
+              <h3>Anime</h3>
+          </div>
+      </div>
+  </section>
+  </div>
+  <!-- footer -->
+  <div class="container-fluid mt-5"
+    style="background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(hinhanh_labs/hinhanh_labs/imagelab6/footer-bg.jpg); background-size: cover;background-position: 0 -60px;">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-4 g-4">
+        <div class="col text-white">
+          <h5>ABOUT US</h5>
+          <hr>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius mollitia perspiciatis eaque
+            numquam dolorum. Adipisci, provident. Commodi, voluptatem magni dignissimos dolorum, dicta nisi
+            expedita, labore obcaecati ipsum porro nihil.</p>
+        </div>
+        <div class="col text-white">
+          <h5>SUBSCRIBE</h5>
+          <hr>
+          <input type="text" class="form-control  text-bg-secondary p-3" placeholder="Email">
+          <button class="btn text-white w-100 py-3 rounded-0" style="background-color: brown;">SUBSCRIBE</button>
+          <div class="mt-3 d-flex justify-content-between">
+            <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-facebook"></i></a>
+            <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-twitter"></i></a>
+            <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i
+                class="fa-brands fa-google-plus-g"></i></a>
+            <a class="btn bg-secondary pt-2" style="color: var(--bgprimary);"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col text-white">
+          <h5>CONTACT INFOMATION</h5>
+          <hr>
+          <p>Lorem ipsum dolor sit amet consectetur, MO, Columbia, 508000</p>
+          <p>+01 2000 800 9999</p>
+        </div>
+        <div class="col text-white">
+          <h5>OPENING HOURS</h5>
+          <hr>
+          <p>Monday: closed</p>
+          <p>Tue-Wed: 9AM-10PM</p>
+          <p>Thu-Fri: 9AM-10PM</p>
+          <p>Sat-Sun: 5PM-10PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="creator text-center" style="font-weight: bold;">Created by <span>Thien Bui</span> | all rights reserved</div>
+</div>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="row justify-content-center bg-white">
+    <div class="col-md-4">
+        <h2 class="text-center">Account system</h2>
+        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email"
+                    autocomplete="email" #emailInput="ngModel" />
+                @if (emailInput.invalid && (emailInput.touched || emailInput.dirty)) {
+                <small id="helpId" class="text-danger">
+                    Email field must be valid
+                </small>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required [(ngModel)]="password"
+                    name="password" #passwordInput="ngModel" minlength="8" autocomplete="current-password" />
+                @if (passwordInput.invalid && (passwordInput.touched ||
+                passwordInput.dirty)) { @if (passwordInput.errors?.['required']) {
+                <small id="helpId" class="text-danger">
+                    Password field must be valid
+                </small>
+                } @if (passwordInput.errors?.['minlength']) {
+                <small id="helpId" class="text-danger">
+                    Pass must be at least 8 characters long.
+                </small>
+                } }
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" [disabled]="!loginForm.form.valid">
+                Login
+            </button>
+        </form>
+    </div>
+</div>
